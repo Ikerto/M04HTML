@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: red;
+}
+h2{
+    color: #aaa;
+    font-weight: bold;
+    text-decoration: underline;
+}
+hr~h2{
+    color: #888;
+}
+h2~h2~h2{
+    color: #444;
+}
+h2~h2~h2~h2{
+    color: #000;
+}
+span{
+    color: red;
+}
+.Franky{
+    color: gray;
+    background-color: green;
+}
+.Avi{
+    color: blue;
+    background-color: skyblue;
+}
+.Boris{
+    color: red;
+    background-color: greenyellow;
+}
+.Tony{
+    color: greenyellow;
+    background-color: red;
+}
+p{
+    font-style: italic;
+}
+li{
+    list-style-type: upper-roman;
+}

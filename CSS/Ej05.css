@@ -1,0 +1,19 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: white;
+    background-color: black;
+}
+h2{
+   display: inline-block;
+   width: 48%;
+   background-color: gray;
+}
+nav{
+    background-color: rgb(206, 206, 206);
+}
+li{
+    display: inline-block;
+    width: 23%;
+}

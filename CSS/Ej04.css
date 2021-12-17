@@ -1,0 +1,12 @@
+div{
+    background-color: aqua;
+    width: 10rem;
+    height: 150px;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+    background-color: violet;
+}

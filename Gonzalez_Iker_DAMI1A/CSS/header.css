@@ -1,13 +1,35 @@
-header h1{
-
+header {
+    width: 99%;
+    text-align: center;
 }
 
-header li{
-    display: inline-block;
-    width: 19.8%;
+header nav{
+    margin-left: 2px;
+    border: 1px solid black;
 }
 
-footer li{
-    display: inline-block;
-    width: 19.8%;
+nav{
+    background-color: whitesmoke;
+}
+
+nav ul{
+    background-color: whitesmoke;
+}
+
+nav ul a{
+    background-color: whitesmoke;
+}
+
+nav ul a{
+    margin: 130px;
+}
+
+a{
+    color: rgb(8, 53, 8);
+}
+
+a{
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
 }

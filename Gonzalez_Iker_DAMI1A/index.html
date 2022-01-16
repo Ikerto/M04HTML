@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <!-- *****************************************************
 NOMBRE: Iker
 APELLIDOS: Gonzalez Tirado
@@ -8,22 +7,21 @@ APELLIDOS: Gonzalez Tirado
 
 <head>
 	<meta charset="utf-8" />
-
 	<link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
 	<title>R libraries for omic analyses</title>
 </head>
 
 <body>
-
     <header>
-        <h1>R LIBRARIES FOR OMIC ANALYSES</h1>
+        <h1>LIBRERÍAS DE R PARA GENÓMICA</h1>
         <nav>
             <ul>
-                <li>Inicio</li>
-                <li>Sobre mí</li>
-                <li>Librerías de R para genómica</li>
-                <li>Contacto</li>
-                <li>Otras cosas</li>
+                <a href="./index.html">INICIO</a>
+                <a href="./index.html">SOBRE MÍ</a>
+                <a href="./librerias.html">LIBRERÍAS</a>
+                <a href="./index.html">CONTACTO</a>
+                <a href="./index.html">OTRAS COSAS</a>
             </ul>
         </nav>
     </header>
@@ -38,53 +36,87 @@ APELLIDOS: Gonzalez Tirado
                 hacer búsquedas en función del tipo de datos que se quiera analizar.
             </p>
         </aside>
-	
-        <p>
-            <h3>SNPassoc</h3>
-            <ul>
-                Version: 2.0-10
-                <br>Date: 2021-11-15
-            </ul>
-            Functions to perform most of the common analysis in genome association studies are implemented. These analyses include descriptive statistics and exploratory analysis of
-        missing values, calculation of Hardy-Weinberg equilibrium, analysis of association based on generalized linear models, and analysis of multiple SNPs .
-        </p>
 
-	    <p>
-            <h3>MultiDataSet</h3>
-            <ul>
-                Version: 1.21.3
-                <br>Date: 2021-10-04
-            </ul>
-            Implementation of the BRGE's MultiDataSet and ResultSet. MultiDataSet is designed for integrating multi omics data sets and ResultSet is a container for omics results.
-        </p>
+        <div class="container">
+            <div class="col1">
+                <div class="SNPassoc">
+                    <img class="SNPassoc" src="./Media/SNPassoc.png" alt="SNPassoc"></img>
+                    <a href="./SNPassoc.html">SNPassoc</a>
+                    <ul>
+                        Version: 2.0-10
+                        <br>Date: 2021-11-15
+                    </ul>
+                    <p>
+                        Se implementan funciones para realizar la mayoría de los análisis comunes en los estudios de asociación del genoma.
+                    </p>
+                </div>
 
-        <p>
-            <h3>CTDquerier</h3>
-            <ul>
-                Version: 2.1.0
-                <br>Date: 2020-08-16
-            </ul>
-            Package to retrieve and visualize data from the Comparative Toxicogenomics Database. The downloaded data is formated as DataFrames for further downstream analyses.
-        </p>
+	            <div class="MultiDataSet">
+                    <img class="MultiDataSet" src="./Media/MultiDataSet.png" alt="MultiDataSet"></img>
+                    <a href="./index.html">MultiDataSet</a>
+                    <ul>
+                        Version: 1.21.3
+                        <br>Date: 2021-10-04
+                    </ul>
+                    <p>
+                        Implementación de los MultiDataSet y ResultSet del BRGE. MultiDataSet está diseñado para integrar conjuntos de
+                    datos multiómicos y ResultSet es un contenedor para resultados ómicos..
+                    </p>
+                </div>
+            </div>
 
-        <p>
-            <h3>rexposome</h3>
-            <ul>
-                Version: 1.15.0
-                <br>Date: 2020-06- 15
-            </ul>
-            Package that allows to explore the exposome and to perform association analyses between exposures and health outcomes. 
-        </p>
-    
-	    <footer>
-            <ul>
-                <li>Facebook</li>
-	            <li>Twitter</li>
-	            <li>Instagram</li>
-	            <li>GitHub</li>
-	            <li>Email</li>
-            </ul>
-        </footer>
+            <div class="col2">
+                <div class="scoreInvHap">
+                    <img class="scoreInvHap" src="./Media/scoreInvHap.png" alt="scoreInvHap"></img>
+                    <a href="./index.html">scoreInvHap</a>
+                    <ul>
+                        Version: 1.13.3
+                        <br>Date: 2020-08-16
+                    </ul>
+                    <p>
+                        scoreInvHap puede obtener el estado de inversión de las muestras de inversiones conocidas. scoreInvHap utiliza datos SNP como
+                    entrada y requiere información sobre la inversión.
+                    </p>
+                </div>
+
+                <div class="rexposome">
+                    <img class="rexposome" src="./Media/rexposome.png" alt="rexposome"></img>
+                    <a href="./index.html">rexposome</a>
+                    <ul>
+                        Version: 1.15.0
+                        <br>Date: 2020-06- 15
+                    </ul>
+                    <p>
+                        Paquete que permite explorar el exposoma y realizar análisis de asociación entre exposiciones y resultados en salud.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col3">
+                <div class="CNVassoc">
+                    <img class="CNVassoc" src="./Media/CNVassoc.png" alt="CNVassoc"></img>
+                    <a href="./index.html"3>CNVassoc</a>
+                    <ul>
+                        Version: 2.4.0
+                        <br>Date: 2019-03-21
+                    </ul>
+                    <p>
+                        Realiza análisis de variantes comunes del número de copias y polimorfismos de nucleótido único imputados en estudios basados en la población.
+                    </p>
+                </div>
+                <div class="methylclock">
+                    <img class="methylclock" src="./Media/methylclock.png" alt="methylclock"></img>
+                    <a href="./index.html">methylclock</a>
+                    <ul>
+                        Version: 1.1.2
+                        <br>Date: 2020-06- 15
+                    </ul>
+                    <p>
+                        Este paquete permite estimar la metilación del ADN cronológico y gestacional así como la edad biológica usando diferentes relojes de metilación.
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>

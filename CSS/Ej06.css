@@ -1,0 +1,32 @@
+ul{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+li{
+  list-style: none;  
+}
+.container{
+    display: flex;
+}
+
+main{
+    flex-grow: 2;
+}
+aside{
+    flex-shrink: 3;
+}
+
+.sectio2-container{
+    display: flex;
+}
+
+
+
+/* section + section h3{
+    width: 100%;
+}
+
+section + section article{
+    width: 47%;
+} */

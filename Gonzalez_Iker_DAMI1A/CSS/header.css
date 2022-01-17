@@ -1,6 +1,14 @@
+*{
+    background-color: rgb(217, 255, 222);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
     width: 99%;
     text-align: center;
+    position: sticky;
+    top: 0;
+    margin-bottom: 1rem;
 }
 
 header nav{
@@ -22,14 +30,22 @@ nav ul a{
 
 nav ul a{
     margin: 130px;
-}
-
-a{
     color: rgb(8, 53, 8);
-}
-
-a{
     font-style: normal;
     font-weight: bold;
     text-decoration: none;
 }
+
+footer {
+    width: 99%;
+    text-align: center;
+    position: fixed;
+    bottom: 0; 
+ }
+
+footer nav{
+    margin-left: 2px;
+    border: 1px solid black;
+}
+
+.clear { clear: both; height: 120px; }

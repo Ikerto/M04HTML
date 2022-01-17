@@ -1,0 +1,53 @@
+body{
+    position: relative;
+}
+
+section{
+    width: 900px;
+    margin: auto;
+    display: block;
+    border: 2px solid black;
+    background-color: rgb(164, 179, 164);
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: rgb(164, 179, 164);
+}
+
+input.nombre{
+    margin-left: 100px;
+    background-color: white;
+}
+
+input.apellido{
+    margin-left: 370px;
+    background-color: white;
+}
+
+input.correo{
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+textarea{
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    background-color: white;
+}
+    
+button{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+}

@@ -14,16 +14,93 @@
         <nav>
             <ul>
                 <a href="./index.html">INICIO</a>
-                <a href="./index.html">SOBRE MÍ</a>
-                <a href="./librerias.html">LIBRERÍAS</a>
-                <a href="./index.html">CONTACTO</a>
-                <a href="./index.html">OTRAS COSAS</a>
+                <a href="">SOBRE MÍ</a>
+                <a href="./menuLibrerias.html">LIBRERÍAS</a>
+                <a href="./cuestionario.html">CONTACTO</a>
+                <a href="">OTRAS COSAS</a>
             </ul>
         </nav>
     </header>
 
     <main>
         <h1>SNPassoc</h1>
-        
+        <h2>Introduction</h2>
+        <p>
+            The `SNPassoc` package contains facilities for data manipulation, tools for exploratory data analysis, convenient graphical facilities,
+            and tools for assessing genetic association for both quantitative and categorial (case-control) traits in whole genome approaches.
+            Genome-based studies are normally analyzed using a multistage approach. In the first step researchers are interested in assessing
+            association between the outcome and thousands of SNPs. In a second and possibly third step, medium/large scale studies are performed in
+            which only a few hundred of SNPs, those with a putative association found in the first step, are genotyped. `SNPassoc` is specially designed
+            for analyzing this kind of designs. In addition, a convenience-based approach (select variants on the basis of logistical considerations such
+            as the ease and cost of genotyping) can also be analyzed using `SNPassoc`. Different genetic models are also implemented in the package.
+            Analysis of multiple SNPs can be analyzed using either haplotype or gene-gene interaction approaches.
+            This document is an updated version of the initial vignette that was published with the SNPassoc paper @gonzalez2007snpassoc. It contains a more
+            realistic example belonging to a real dataset. The original vignette is still available
+            <a href="https://github.com/isglobal-brge/TeachingMaterials/blob/master/Master_Bioinformatics/Recommended_lectures/SupplementaryMaterial-BIOINF-2006-1602.R1.pdf">here</a>.
+        </p>
+        <h2>Data loading</h2>
+        <p>
+            SNP data are typically available in text format or Excel spreadsheets which are easily uploaded in `R` as a data frame. Here, as an illustrative example,
+            we are analyzing a dataset containing epidemiological information and 51 SNPs from a case-control study on asthma. The data is available within `SNPassoc`
+            and can be loaded by. Then, the data is loaded into the R session by<br><br>
+            <span>
+                data(asthma, package = "SNPassoc")
+            str(asthma, list.len=9)
+            asthma[1:5, 1:8]
+            </span>
+            <br><br>We observe that we have case-control status (0: control, 1: asthma) and another 4 variables encoding the country of origin, gender, age, body mass index
+            (bmi) and smoking status (0: no smoker, 1: ex-smoker, 2: current smoker). There are 51 SNPs whose genotypes are given by the alleles names.
+        </p>
+        <h2>Descriptive analysis</h2>
+        <p>
+            To start the analysis, we must indicate which columns of the dataset `asthma` contain the SNP data, using the `setupSNP` function. In our example,
+            SNPs start from column 7 onwards, which we specify in argument *colSNPs*<br><br>
+            <span>
+                library(SNPassoc)
+                asthma.s <- setupSNP(data=asthma, colSNPs=7:ncol(asthma), sep="")
+            </span>
+            <br><br>This is an alternative way of determining the columns containing the SNPs<br><br>
+            <span>
+            idx <- grep("^rs", colnames(asthma))
+            asthma.s <- setupSNP(data=asthma, colSNPs=idx, sep="")
+            </span>
+            <br><br>The argument *sep* indicates the character separating the alleles. The default value is ''/´´. In our case, there is no separating character, so that,
+            we set *sep=""*. The argument *name.genotypes* can be used when genotypes are available in other formats, such as 0, 1, 2 or ''norm´´, ''het´´, ''mut´´.
+            The purpose of the `setupSNP` function is to assign the class *snp* to the SNPs variables, to which `SNPassoc` methods will be applied. The function labels
+            the most common genotype across subjects as the reference one. When numerous SNPs are available, the function can be parallelized through the argument *mc.cores*
+            that indicates the number of processors to be used. We can verify that the SNP variables are given the new class *snp*<br><br>
+            <span>
+                head(asthma.s$rs1422993)
+                class(asthma.s$rs1422993)
+            </span>
+            <br><br>and summarize their content with `summary`<br><br>
+            <span>
+                summary(asthma.s$rs1422993)
+            </span>
+            <br><br>which shows the genotype and allele frequencies for a given SNP, testing for Hardy-Weinberg equilibrium (HWE). We can also visualize the results in a plot by<br><br>
+            <span>
+                plot(asthma.s$rs1422993)
+            </span><br>
+            <br><img src="./Media/SNPassoc/descriptiva1.png"><br>
+            <br>The argument *type* helps to get a pie chart<br><br>
+            <span>
+                plot(asthma.s$rs1422993, type=pie)
+            </span><br>
+            <br><img src="./Media/SNPassoc/descriptiva2.png"><br>
+            <br>The *summary* function can also be applied to the whole dataset<br><br>
+            <span>
+                summary(asthma.s, print=FALSE)
+            </span><br>
+            <br>showing the SNP labels with minor/major allele format, the major allele frequency the HWE test and the percentage of missing genotypes.
+            Missing values can be further explored plotting with<br><br>
+            <span>
+                plotMissing(asthma.s, print.labels.SNPs = FALSE)
+            </span><br>
+            <br><img src="./Media/SNPassoc/missing.png"><br>
+            <br>This plot can be used to inspect if missing values appear randomly across individuals and SNPs. In our case, we can see that the missing
+            pattern may be considered random, except for three clusters in consecutive SNPs (large black squares). These individuals should be further checked for
+            possible problems with genotyping.
+        </p>
+            
     </main>
 </body>

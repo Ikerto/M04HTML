@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cuestionario</title>
+    <link rel="stylesheet" href="CSS/header.css" />
+    <link rel="stylesheet" href="CSS/cuestionario.css" />
+</head>
+
+<body>
+    <header>
+        <h1>LIBRERÍAS DE R PARA GENÓMICA</h1>
+        <nav>
+            <ul>
+                <a href="./index.html">INICIO</a>
+                <a href="">SOBRE MÍ</a>
+                <a href="./menuLibrerias.html">LIBRERÍAS</a>
+                <a href="./cuestionario.html">CONTACTO</a>
+                <a href="">OTRAS COSAS</a>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+            <p>FORMULARIO</p>
+
+            <input placeholder="Nombre" class="nombre"type="text" id="name" name="name" required
+            minlength="1" maxlength="12" size="18">
+
+            <input placeholder="Apellido" class="apellido" type="text" id="apellido" name="apellido" required
+            minlength="1" maxlength="20" size="18">
+
+            <br><input placeholder="Correo" class="correo" type="text" id="correo" name="correo" required
+            minlength="1" maxlength="40" size="40">
+            
+            <br><textarea placeholder="Comentario" class="comentario" name="comentario" cols="40" rows="5"></textarea>
+
+            <button type="button">Enviar</button> 
+    </section>
+</body>

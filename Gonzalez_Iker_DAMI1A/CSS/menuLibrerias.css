@@ -1,0 +1,28 @@
+hr{
+    height: 2px;
+    background-color: green;
+    border: none;
+}
+
+section{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+img{
+    height: 100px;
+}
+
+a{
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(8, 53, 8);
+}
+
+p{
+    text-align: justify;
+    margin-left: 10px;
+}
